@@ -1,11 +1,11 @@
 from neo4j import GraphDatabase
 from dotenv import load_dotenv
-import os
+import streamlit as st
 
-load_dotenv()  # Load .env file
-neo4j_uri = os.getenv("NEO4J_URI")
-neo4j_username = os.getenv("NEO4J_USERNAME")
-neo4j_password = os.getenv("NEO4J_PASSWORD")
+# Access Neo4j credentials from Streamlit Cloud secrets
+neo4j_uri = st.secrets["NEO4J_URI"]
+neo4j_username = st.secrets["NEO4J_USERNAME"]
+neo4j_password = st.secrets["NEO4J_PASSWORD"]
 
 
 class KnowledgeGraph:
