@@ -29,7 +29,6 @@ class Neo4jQuery:
             return [{"Skill": record["Skill"], "Rank": record["Rank"], "Category": record["Category"]}
                     for record in result]
 
-
     def get_years(self):
         with self.driver.session() as session:
             result = session.run("MATCH (y:Year) RETURN DISTINCT y.value AS year ORDER BY y.value")

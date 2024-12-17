@@ -22,7 +22,7 @@ class KnowledgeGraph:
 
             # Load data from CSV and create nodes and relationships
             session.run("""
-            LOAD CSV WITH HEADERS FROM 'file:///skill_data.csv' AS row
+            LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/Nilam-P/csv-file/refs/heads/main/skill_data.csv' AS row
             WITH row
             MERGE (industry:Industry {name: row.industry_name})
             MERGE (year:Year {value: toInteger(row.year)})
